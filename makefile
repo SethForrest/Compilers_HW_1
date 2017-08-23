@@ -1,18 +1,20 @@
 CC=gcc
 CFLAGS=-c -g
 
-120++: 120++.o lex.yy.o
-	$(CC) -o 120++ 120++.o lex.yy.o
+120++: main.o lex.yy.o
+	$(CC) -o 120++ main.o lex.yy.o
 
-120++.o: 120++.c
-	$(CC) $(CFLAGS) 120++.c
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
 
 lex.yy.o: lex.yy.c
 	$(CC) $(CFLAGS) lex.yy.c
 
-lex.yy.c: clex.l cgram.tab.h
+lex.yy.c: clex.l ytab.h
 	flex clex.l
-
+  
+clean:
+	\rm	*.o 120++ *.yy.c
 
 
 
