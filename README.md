@@ -60,7 +60,8 @@ int main()
 {
    printf("Hello, world\n");
    return 0;
-}```
+}
+```
 your output should look something like:
 
 ```
@@ -80,7 +81,8 @@ Category	Text		Lineno		Filename	Ival/Sval
 264		return		4		hello.c
 271		0		4		hello.c		0
 263		;		4		hello.c
-293		}		5		hello.c```
+293		}		5		hello.c
+```
 
 ### Include Files?
 
