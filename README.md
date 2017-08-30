@@ -2,7 +2,8 @@
 First homework assignment for UIdaho's Fall '17 CS445-Compilers class
 
 
-=========================================================================================================
+=====================================================================
+
 CS 445 Assignment 1: A Lexical Analyzer
 
 Due: Thursday September 7, 11:30pm
