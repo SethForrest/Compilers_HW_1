@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-c -g
+CFLAGS=-c -g -Wfatal-errors
 
 120++: main.o lex.yy.o
 	$(CC) -o 120++ main.o lex.yy.o
