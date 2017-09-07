@@ -1,14 +1,17 @@
 CC=gcc
 CFLAGS=-c -g -Wfatal-errors
 
-120++: main.o lex.yy.o
-	$(CC) -o 120++ main.o lex.yy.o
+120++: main.o lex.yy.o token.o
+	$(CC) -o 120++ main.o lex.yy.o token.o
 
 main.o: main.c
 	$(CC) $(CFLAGS) main.c
 
 lex.yy.o: lex.yy.c
 	$(CC) $(CFLAGS) lex.yy.c
+	
+token.o: token.c token.h
+	$(CC) $(CFLAGS) token.c
 
 lex.yy.c: clex.l ytab.h
 	flex clex.l

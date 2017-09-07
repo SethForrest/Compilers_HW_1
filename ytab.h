@@ -1,3 +1,8 @@
+
+#define YY_BUFFER_SIZE 16384
+
+
+//============ Begin Predefined Values =============
 #define ELIPSIS 257
 #define AUTO 258
 #define BREAK 259
