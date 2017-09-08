@@ -28,7 +28,9 @@ char *format_sval(char * string){
 			char escape = strP[1]; // next char
 			if(escape == 'n' || escape == 't' || escape == '\'' || escape == '\\' || escape == '\"' || escape == '\0'){
 				strP = strP + 2;
-			} 
+			} else {
+				strP++; //handles when a literal char is escaped
+			}
 			// switch(escape){
 				// case 'n':
 					// strP[0] = 10;

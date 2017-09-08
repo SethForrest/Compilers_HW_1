@@ -1,4 +1,4 @@
-#include "pet.h"
+#include "hello2.h"
 #include <iostream>
 #include <fstream>
 
@@ -11,5 +11,6 @@ int main()
 	/* 
 	Block comment test for 
 	*/
+	int some_num = 72;
  cout << "hey there \n" << endl;
 }

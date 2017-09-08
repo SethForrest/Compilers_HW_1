@@ -89,6 +89,64 @@ FILE *saved_yyin;
 "while"                 { tokenize(WHILE); 		return WHILE; }
 
 
+
+"alignas"									{ tokenize(ALIGNAS);	 return ALIGNAS; }
+"alignof"									{ tokenize(ALIGNOF);	 return ALIGNOF; }
+"and_eq"									{ tokenize(AND_EQ);	 return AND_EQ; }
+"asm"											{ tokenize(ASM);	 return ASM; }
+"atomic_cancel"						{ tokenize(ATOMIC_CANCEL);	 return ATOMIC_CANCEL; }
+"atomic_commit"						{ tokenize(ATOMIC_COMMIT);	 return ATOMIC_COMMIT; }
+"atomic_noexcept"		{ tokenize(ATOMIC_NOEXCEPT);	 return ATOMIC_NOEXCEPT; }
+"bitand"		{ tokenize(BITAND);	 return BITAND; }
+"bitor"		{ tokenize(BITOR);	 return BITOR; }
+"bool"		{ tokenize(BOOL);	 return BOOL; }
+"catch"		{ tokenize(CATCH);	 return CATCH; }
+"char16_t"		{ tokenize(CHAR16_T);	 return CHAR16_T; }
+"char32_t"		{ tokenize(CHAR32_T);	 return CHAR32_T; }
+"class"		{ tokenize(CLASS);	 return CLASS; }
+"compl"		{ tokenize(COMPL);	 return COMPL; }
+"concept"		{ tokenize(CONCEPT);	 return CONCEPT; }
+"constexpr"		{ tokenize(CONSTEXPR);	 return CONSTEXPR; }
+"const_cast"		{ tokenize(CONST_CAST);	 return CONST_CAST; }
+"decltype"		{ tokenize(DECLTYPE);	 return DECLTYPE; }
+"delete"		{ tokenize(DELETE);	 return DELETE; }
+"dynamic_cast"		{ tokenize(DYNAMIC_CAST);	 return DYNAMIC_CAST; }
+"explicit"		{ tokenize(EXPLICIT);	 return EXPLICIT; }
+"export"		{ tokenize(EXPORT);	 return EXPORT; }
+"friend"		{ tokenize(FRIEND);	 return FRIEND; }
+"import"		{ tokenize(IMPORT);	 return IMPORT; }
+"inline"		{ tokenize(INLINE);	 return INLINE; }
+"module"		{ tokenize(MODULE);	 return MODULE; }
+"mutable"		{ tokenize(MUTABLE);	 return MUTABLE; }
+"namespace"		{ tokenize(NAMESPACE);	 return NAMESPACE; }
+"new"		{ tokenize(NEW);	 return NEW; }
+"noexcept"		{ tokenize(NOEXCEPT);	 return NOEXCEPT; }
+"not_eq"		{ tokenize(NOT_EQ);	 return NOT_EQ; }
+"nullptr"		{ tokenize(NULLPTR);	 return NULLPTR; }
+"operator"		{ tokenize(OPERATOR);	 return OPERATOR; }
+"or_eq"		{ tokenize(OR_EQ);	 return OR_EQ; }
+"private"		{ tokenize(PRIVATE);	 return PRIVATE; }
+"protected"		{ tokenize(PROTECTED);	 return PROTECTED; }
+"public"		{ tokenize(PUBLIC);	 return PUBLIC; }
+"reinterpret_cast"		{ tokenize(REINTERPRET_CAST);	 return REINTERPRET_CAST; }
+"requires"		{ tokenize(REQUIRES);	 return REQUIRES; }
+"static_assert"		{ tokenize(STATIC_ASSERT);	 return STATIC_ASSERT; }
+"static_cast"		{ tokenize(STATIC_CAST);	 return STATIC_CAST; }
+"synchronized"		{ tokenize(SYNCHRONIZED);	 return SYNCHRONIZED; }
+"template"		{ tokenize(TEMPLATE);	 return TEMPLATE; }
+"this"		{ tokenize(THIS);	 return THIS; }
+"thread_local"		{ tokenize(THREAD_LOCAL);	 return THREAD_LOCAL; }
+"throw"		{ tokenize(THROW);	 return THROW; }
+"try"		{ tokenize(TRY);	 return TRY; }
+"typeid"		{ tokenize(TYPEID);	 return TYPEID; }
+"typename"		{ tokenize(TYPENAME);	 return TYPENAME; }
+"using"		{ tokenize(USING);	 return USING; }
+"virtual"		{ tokenize(VIRTUAL);	 return VIRTUAL; }
+"wchar_t"		{ tokenize(WCHAR_T);	 return WCHAR_T; }
+"xor"		{ tokenize(XOR);	 return XOR; }
+"xor_eq"		{ tokenize(XOR_EQ);	 return XOR_EQ; }
+
+
 {L}({L}|{D})*           { tokenize(IDENTIFIER); return IDENTIFIER; }
 0[xX]{H}+{IS}?          { lexerr("Hex not supported\n"); }
 0{O}+{IS}?              { lexerr("Octal not supported\n"); }
@@ -110,7 +168,7 @@ FILE *saved_yyin;
 "#include <iostream>"			{iostream = TRUE;}
 "#include "+{LIT}  				{handle_include();}
 
-"using namespace std;"			{ }
+
 
 ">>="                   { tokenize(SRASN); 	return SRASN; }
 "<<="                   { tokenize(SLASN); 	return SLASN; }
